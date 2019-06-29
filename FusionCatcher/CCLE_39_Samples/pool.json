@@ -1,0 +1,33 @@
+{
+  "id": "poolfusion",
+  "vmSize": "standard_e4_v3",
+  "virtualMachineConfiguration": {
+    "imageReference": {
+      "publisher": "Canonical",
+      "offer": "UbuntuServer",
+      "sku": "16.04-LTS",
+      "version": "latest"
+    },
+    "nodeAgentSKUId": "batch.node.ubuntu 16.04"
+  },
+  "targetDedicatedNodes": 39,
+  "targetLowPriorityNodes": 0,
+  "resizeTimeout": "PT55M",
+  "enableAutoScale": false,
+  "MaxTasksPerComputeNode": 1,
+  "applicationLicenses":[
+         "3dsmax",
+         "arnold"
+      ],
+  "enableInterNodeCommunication": false,
+"startTask": {
+    "commandLine": "/bin/bash -c \"sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable' && sudo apt-get update && sudo apt-get install -y docker-ce\"",
+    "waitForSuccess": true,
+    "userIdentity": {
+    "autoUser": {
+    "elevationLevel": "admin"
+
+            }
+        }
+    }
+}

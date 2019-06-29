@@ -1,0 +1,50 @@
+[{
+  "id": "test14",
+  "displayName": "displayName",
+  "commandLine": "/bin/bash -c 'unzip data_com.zip; rm data_com.zip; /opt/fusioncatcher/bin/fusioncatcher -d data/human_v90 -i G27280.TC-71.1_1.fastq.gz,G27280.TC-71.1_2.fastq.gz -o tc71test'",
+  "resourceFiles": [
+
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/data_com.zip",
+      "filePath": "data_com.zip",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/data_com.zip"
+    },
+
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/G27280.TC-71.1/G27280.TC-71.1_1.fastq.gz",
+      "filePath": "G27280.TC-71.1_1.fastq.gz",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/G27280.TC-71.1/G27280.TC-71.1_1.fastq.gz"
+    },
+
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/G27280.TC-71.1/G27280.TC-71.1_2.fastq.gz",
+      "filePath": "G27280.TC-71.1_2.fastq.gz",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/G27280.TC-71.1/G27280.TC-71.1_2.fastq.gz"
+    }
+
+  ],
+"outputFiles": [
+    {
+      "filePattern": "tc71test/*",
+      "destination":{
+        "container":{
+          "containerUrl": "https://ccle.blob.core.windows.net/goldstandresults?st=2019-02-20T17%3A48%3A00Z&se=2019-04-22T19%3A48%3A00Z&sp=rwl&sv=2018-03-28&sr=c&sig=cx0YzPT36c6VbPuQd%2BNPaNlIAMqaNDiucGv5Hyccg0g%3D",
+          "path": "tc71test"
+        }
+
+      },
+
+      "uploadOptions":{
+        "uploadCondition": "taskcompletion"
+      }
+
+    }
+  ],
+
+  "userIdentity": {
+  "autoUser": {
+  "elevationLevel": "admin"
+
+            }
+    }
+}]

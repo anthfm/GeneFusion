@@ -1,0 +1,48 @@
+[{
+  "id": "gbJwzogcUG",
+  "displayName": "displayName",
+  "commandLine": "/bin/bash -c 'unzip data_com.zip; rm data_com.zip; /opt/fusioncatcher/bin/fusioncatcher -d data/human_v90 -i G27324.EM-2.1_1.fastq.gz,G27324.EM-2.1_2.fastq.gz -o G27324.EM-2.1'",
+  "resourceFiles": [
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/data_com.zip",
+      "filePath": "data_com.zip",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/data_com.zip"
+    },
+
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/G27324.EM-2.1/G27324.EM-2.1_1.fastq.gz",
+      "filePath": "G27324.EM-2.1_1.fastq.gz",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/G27324.EM-2.1/G27324.EM-2.1_1.fastq.gz"
+    },
+
+   {
+      "httpUrl": "https://ccle.blob.core.windows.net/goldstand/G27324.EM-2.1/G27324.EM-2.1_2.fastq.gz",
+      "filePath": "G27324.EM-2.1_2.fastq.gz",
+      "blobSource":"https://ccle.blob.core.windows.net/goldstand/G27324.EM-2.1/G27324.EM-2.1_2.fastq.gz"
+    }
+  ],
+"outputFiles": [
+    {
+      "filePattern": "G27324.EM-2.1/*",
+      "destination":{
+        "container":{
+          "containerUrl": "https://ccle.blob.core.windows.net/goldstandresults?st=2019-02-21T23%3A02%3A00Z&se=2019-04-24T00%3A02%3A00Z&sp=rwl&sv=2018-03-28&sr=c&sig=riIeVOW51b4OEqj1GliCCDu8xKCcfjgGGTKsz0yKqao%3D",
+          "path": "G27324.EM-2.1"
+        }
+
+      },
+
+      "uploadOptions":{
+        "uploadCondition": "taskcompletion"
+      }
+
+    }
+  ],
+
+  "userIdentity": {
+  "autoUser": {
+  "elevationLevel": "admin"
+
+            }
+    }
+}]

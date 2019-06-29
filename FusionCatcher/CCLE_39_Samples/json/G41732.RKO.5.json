@@ -1,0 +1,36 @@
+[{
+  "id": "gGeOwcKl7w",
+  "displayName": "displayName",
+  "commandLine": "/bin/bash -c 'docker run --rm -v $PWD:$PWD -w $PWD bhklab/picard-2.17.2 java -jar /usr/bin/picard.jar SamToFastq I=G41732.RKO.5.bam F=G41732.RKO.5_1.fastq.gz F2=G41732.RKO.5_2.fastq.gz'",
+  "resourceFiles": [
+    {
+      "httpUrl": "https://ccle.blob.core.windows.net/rnaseq/c88b8503-73ce-4c8e-89a9-498b614037ae/G41732.RKO.5.bam",
+      "filePath": "G41732.RKO.5.bam",
+      "blobSource":"https://ccle.blob.core.windows.net/rnaseq/c88b8503-73ce-4c8e-89a9-498b614037ae/G41732.RKO.5.bam"
+    }
+  ],
+"outputFiles": [
+    {
+      "filePattern": "*.fastq.gz",
+      "destination":{
+        "container":{
+          "containerUrl": "https://ccle.blob.core.windows.net/fusion-39?st=2019-03-02T12%3A32%3A00Z&se=2019-05-24T13%3A32%3A00Z&sp=rwl&sv=2018-03-28&sr=c&sig=DjPx18OeZmGpDgUVEjwF8fvi0Ou1oV3g%2FlLn10%2FYu4Y%3D",
+          "path": "G41732.RKO.5"
+        }
+
+      },
+
+      "uploadOptions":{
+        "uploadCondition": "taskcompletion"
+      }
+
+    }
+  ],
+
+  "userIdentity": {
+  "autoUser": {
+  "elevationLevel": "admin"
+
+            }
+    }
+}]

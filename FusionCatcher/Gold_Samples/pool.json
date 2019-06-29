@@ -1,0 +1,33 @@
+{
+  "id": "poolfusion",
+  "vmSize": "standard_d5_v2",
+  "virtualMachineConfiguration": {
+    "imageReference": {
+      "publisher": "Canonical",
+      "offer": "UbuntuServer",
+      "sku": "16.04-LTS",
+      "version": "latest"
+    },
+    "nodeAgentSKUId": "batch.node.ubuntu 16.04"
+  },
+  "targetDedicatedNodes": 1,
+  "targetLowPriorityNodes": 0,
+  "resizeTimeout": "PT55M",
+  "enableAutoScale": false,
+  "MaxTasksPerComputeNode": 1,
+  "applicationLicenses":[
+         "3dsmax",
+         "arnold"
+      ],
+  "enableInterNodeCommunication": false,
+"startTask": {
+    "commandLine": "/bin/bash -c \"sudo apt-get update && sudo apt-get install -y wget gawk gcc g++ make cmake automake curl unzip zip bzip2 tar gzip pigz parallel build-essential libncurses5-dev libc6-dev zlib1g zlib1g-dev libtbb-dev libtbb2 python python-dev python-numpy python-biopython python-xlrd python-openpyxl default-jdk && wget http://sf.net/projects/fusioncatcher/files/bootstrap.py -O bootstrap.py && yes Y | sudo python bootstrap.py\"",
+    "waitForSuccess": true,
+    "userIdentity": {
+    "autoUser": {
+    "elevationLevel": "admin"
+
+            }
+        }
+    }
+}
